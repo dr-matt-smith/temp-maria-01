@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Activity{% endblock %}
+
+{% block body %}
+    <h1>Activity - answer the question</h1>
+
+
+    <form method="post" action="{{ path('process_mc') }}">
+        
+        <p>
+            {{ activity0.title }}
+
+            <input type="hidden" name="activity0Id" value="{{ activity0.id }}">
+
+            <input type="radio" name="activity0" value="{{ answers0.answers[0].id}}">{{ answers0.answers[0].text }}
+            <input type="radio" name="activity0" value="{{ answers0.answers[1].id}}">{{ answers0.answers[1].text }}
+            <input type="radio" name="activity0" value="{{ answers0.answers[2].id}}">{{ answers0.answers[2].text }}
+
+        <hr>
+        <p>
+            {{ activity1.title }}
+
+            <input type="hidden" name="activity1Id" value="{{ activity1.id }}">
+
+            <input type="radio" name="activity1" value="1">{{ activity1.answer1 }}
+            <input type="radio" name="activity1" value="2">{{ activity1.answer2 }}
+            <input type="radio" name="activity1" value="3">{{ activity1.answer3 }}
+        <hr>
+        <input type="submit" value="Check answer">
+    </form>
+
+
+
+{% endblock %}

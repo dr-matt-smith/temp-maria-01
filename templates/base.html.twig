@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        {% block stylesheets %}{% endblock %}
+
+        <style>
+            label {
+                text-align: left;
+                color: blue;
+                padding-right: 1rem;
+            }
+        </style>
+    </head>
+    <body>
+
+    {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+        <a href="{{ url('logout') }}">logout</a>
+    {% else %}
+        <a href="{{ url('login') }}">login</a>
+    {% endif %}
+    <hr>
+
+    <nav>
+        <ul>
+            <li>
+                <a href="{{ path('home_page') }}">home</a>
+            </li>
+            {% if is_granted('ROLE_ADMIN') %}
+                <li>
+                    <a href="{{ path('admin_home') }}">Admin home</a>
+                </li>
+            {% endif %}
+
+
+
+        </ul>
+    </nav>
+
+        {% block body %}{% endblock %}
+        {% block javascripts %}{% endblock %}
+    </body>
+</html>

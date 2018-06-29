@@ -1,0 +1,90 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Activity{% endblock %}
+
+{% block body %}
+    <h1>Activity</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ activity.id }}</td>
+            </tr>
+            <tr>
+                <th>Title</th>
+                <td>{{ activity.title }}</td>
+            </tr>
+            <tr>
+                <th>Image</th>
+                <td>{{ activity.image }}</td>
+            </tr>
+            <tr>
+                <th>Audio</th>
+                <td>{{ activity.audio }}</td>
+            </tr>
+            <tr>
+                <th>Video</th>
+                <td>{{ activity.video }}</td>
+            </tr>
+            <tr>
+                <th>PreText</th>
+                <td>{{ activity.preText }}</td>
+            </tr>
+            <tr>
+                <th>PostText</th>
+                <td>{{ activity.postText }}</td>
+            </tr>
+            <tr>
+                <th>Answer1</th>
+                <td>{{ activity.answer1 }}</td>
+            </tr>
+            <tr>
+                <th>Answer2</th>
+                <td>{{ activity.answer2 }}</td>
+            </tr>
+            <tr>
+                <th>Answer3</th>
+                <td>{{ activity.answer3 }}</td>
+            </tr>
+            <tr>
+                <th>Answer4</th>
+                <td>{{ activity.answer4 }}</td>
+            </tr>
+            <tr>
+                <th>Answer5</th>
+                <td>{{ activity.answer5 }}</td>
+            </tr>
+            <tr>
+                <th>Answer6</th>
+                <td>{{ activity.answer6 }}</td>
+            </tr>
+            <tr>
+                <th>Answer7</th>
+                <td>{{ activity.answer7 }}</td>
+            </tr>
+            <tr>
+                <th>Answer8</th>
+                <td>{{ activity.answer8 }}</td>
+            </tr>
+            <tr>
+                <th>Answer9</th>
+                <td>{{ activity.answer9 }}</td>
+            </tr>
+            <tr>
+                <th>Answer10</th>
+                <td>{{ activity.answer10 }}</td>
+            </tr>
+            <tr>
+                <th>Sequence</th>
+                <td>{{ activity.sequence }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('activity_index') }}">back to list</a>
+
+    <a href="{{ path('activity_edit', {'id': activity.id}) }}">edit</a>
+
+    {{ include('activity/_delete_form.html.twig') }}
+{% endblock %}

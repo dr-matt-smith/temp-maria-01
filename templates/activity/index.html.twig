@@ -1,0 +1,67 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Activity index{% endblock %}
+
+{% block body %}
+    <h1>Activity index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Title</th>
+                <th>Image</th>
+                <th>Audio</th>
+                <th>Video</th>
+                <th>PreText</th>
+                <th>PostText</th>
+                <th>Answer1</th>
+                <th>Answer2</th>
+                <th>Answer3</th>
+                <th>Answer4</th>
+                <th>Answer5</th>
+                <th>Answer6</th>
+                <th>Answer7</th>
+                <th>Answer8</th>
+                <th>Answer9</th>
+                <th>Answer10</th>
+                <th>Sequence</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for activity in activities %}
+            <tr>
+                <td>{{ activity.id }}</td>
+                <td>{{ activity.title }}</td>
+                <td>{{ activity.image }}</td>
+                <td>{{ activity.audio }}</td>
+                <td>{{ activity.video }}</td>
+                <td>{{ activity.preText }}</td>
+                <td>{{ activity.postText }}</td>
+                <td>{{ activity.answer1 }}</td>
+                <td>{{ activity.answer2 }}</td>
+                <td>{{ activity.answer3 }}</td>
+                <td>{{ activity.answer4 }}</td>
+                <td>{{ activity.answer5 }}</td>
+                <td>{{ activity.answer6 }}</td>
+                <td>{{ activity.answer7 }}</td>
+                <td>{{ activity.answer8 }}</td>
+                <td>{{ activity.answer9 }}</td>
+                <td>{{ activity.answer10 }}</td>
+                <td>{{ activity.sequence }}</td>
+                <td>
+                    <a href="{{ path('activity_show', {'id': activity.id}) }}">show</a>
+                    <a href="{{ path('activity_edit', {'id': activity.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="19">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('activity_new') }}">Create new</a>
+{% endblock %}
